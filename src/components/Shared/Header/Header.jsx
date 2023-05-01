@@ -5,7 +5,7 @@ import logo from "../../../assets/images/yammyLogo.png";
 const Header = () => {
   return (
     <div>
-      <div className="navbar px-[10%] pt-5">
+      <div className="navbar px-[10%] pt-5 z-50 sticky top-0">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
