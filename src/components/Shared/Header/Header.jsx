@@ -3,9 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/yammyLogo.png";
 const Header = () => {
+  const user = false;
   return (
-    <div>
-      <div className="navbar px-[10%] pt-5 z-50 sticky top-0 text-white bg-slate-900 opacity-60">
+    <div className=" px-[10%] py-2 z-50 sticky top-0 text-white bg-slate-900 flex items-center justify-between">
+      <div className="navbar ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -26,10 +27,10 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu font-semibold menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Home</a>
+                <Link>Home</Link>
               </li>
               <li>
                 <a>Blog</a>
@@ -37,11 +38,11 @@ const Header = () => {
             </ul>
           </div>
           <Link>
-            <img src={logo} alt="" className="w-4/5" />
+            <img src={logo} alt="" className="w-3/5" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 font-semibold">
             <li>
               <a>Home</a>
             </li>
@@ -51,35 +52,33 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Get started</a>
-        </div>
-        <div className="flex-none">
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+      </div>
+      <div>
+        {user ? (
+          <div className="flex gap-3">
+            <div
+              className="tooltip hover:tooltip-open tooltip-bottom"
+              data-tip={user?.displayName}
             >
-              <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
-              </li>
-            </ul>
+              <img
+                src=""
+                alt=""
+                className="w-12 h-12 rounded-full ring ring-primary "
+              />
+            </div>
+
+            <button className="px-5 bg-primary text-white font-semibold rounded-lg">
+              LogOut
+            </button>
           </div>
-        </div>
+        ) : (
+          <Link
+            to={"./login"}
+            className="px-5  py-3 bg-primary text-white font-semibold rounded-lg"
+          >
+            SignIn
+          </Link>
+        )}
       </div>
     </div>
   );

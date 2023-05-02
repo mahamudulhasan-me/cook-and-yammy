@@ -88,7 +88,7 @@ const Footer = () => {
         <div>
           <SectionHeadMini>Subscribe</SectionHeadMini>
           <div>
-            <p className="mt-5">
+            <p className="mt-5 font-semibold">
               Enter your email address below to subscribe to my newsletter
             </p>
             <div>

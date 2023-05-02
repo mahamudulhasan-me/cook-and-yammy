@@ -30,10 +30,11 @@ const RecipeDetails = ({ recipe }) => {
             5/{rating}({total_ratings})
           </p>
           <p className="flex gap-1 items-center font-semibold">
-            <FaRegBookmark
-              onClick={favoriteHandler}
-              className={`text-2xl ${favorite ? "text-primary" : ""}`}
-            />{" "}
+            <button disabled={favorite} onClick={favoriteHandler}>
+              <FaRegBookmark
+                className={`text-2xl ${favorite ? "text-primary" : ""}`}
+              />
+            </button>{" "}
             Add to Favorite
           </p>
         </div>

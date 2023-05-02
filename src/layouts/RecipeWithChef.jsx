@@ -32,7 +32,7 @@ const RecipeWithChef = () => {
         setChefDetails(data.find((chef) => chef.chef_name === name))
       );
   }, []);
-  //   http://localhost:6969/chef/Gordon%20Ramsay
+
   console.log(recifeDetails);
   return (
     <div>
