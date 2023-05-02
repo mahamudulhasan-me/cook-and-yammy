@@ -2,6 +2,7 @@ import { Rating } from "@smastrom/react-rating";
 import React, { useState } from "react";
 import { FaAngleDoubleRight, FaRegBookmark, FaSortDown } from "react-icons/fa";
 import { toast } from "react-toastify";
+import SectionHeadMini from "../SectionHead/SectionHeadMini";
 const RecipeDetails = ({ recipe }) => {
   const [favorite, setFavorite] = useState(false);
   const [seeMore, setSeeMore] = useState(true);
@@ -20,7 +21,7 @@ const RecipeDetails = ({ recipe }) => {
   } = recipe;
   return (
     <div className="border p-5 rounded-lg mb-10">
-      <img className="h-80 w-full rounded-xl" src={food_image} alt="" />
+      <img className="h-[22rem] w-full rounded-xl" src={food_image} alt="" />
       <div>
         <h2 className="text-2xl font-semibold mt-5">{recipe_name}</h2>
         <div className="flex items-center  gap-10 mt-3 mb-5">
@@ -37,10 +38,7 @@ const RecipeDetails = ({ recipe }) => {
           </p>
         </div>
         <div>
-          <div className="border-b border-gray-300 mb-3 relative w-4/5">
-            <h1 className="font-semibold text-xl mb-2">Ingredients</h1>
-            <div className="w-16 h-1 bg-primary absolute -bottom-0.5"></div>
-          </div>
+          <SectionHeadMini>Ingredients</SectionHeadMini>
           {ingredients.length > 3 && seeMore2
             ? ingredients.slice(0, 3).map((ingredient, index) => (
                 <p
@@ -68,10 +66,7 @@ const RecipeDetails = ({ recipe }) => {
           )}
         </div>
         <div className="mt-5">
-          <div className="border-b border-gray-300 mb-3 relative w-4/5">
-            <h1 className="font-semibold text-xl mb-2">Cooking Method</h1>
-            <div className="w-16 h-1 bg-primary absolute -bottom-0.5"></div>
-          </div>
+          <SectionHeadMini>Cooking Method</SectionHeadMini>
           <div className="space-y-2">
             {directions.length > 3 && seeMore
               ? directions.slice(0, 3).map((direction, index) => (

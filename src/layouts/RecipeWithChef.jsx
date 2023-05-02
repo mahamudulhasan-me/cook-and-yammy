@@ -99,7 +99,9 @@ const RecipeWithChef = () => {
                 ))}
               </div>
               <div className="col-span-4 ">
-                <SectionHead>Trending Recipes</SectionHead>
+                <SectionHead>
+                  <span className="text-primary">Trending</span> Recipes
+                </SectionHead>
                 {recifeDetails.map((recipe) => (
                   <TrendingRecipe key={recipe.id} recipe={recipe} />
                 ))}
