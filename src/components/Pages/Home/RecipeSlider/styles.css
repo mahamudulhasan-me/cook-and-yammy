@@ -13,10 +13,12 @@
   justify-content: center;
   align-items: center;
 }
-
 .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.recipe img {
+  height: 21rem;
 }
