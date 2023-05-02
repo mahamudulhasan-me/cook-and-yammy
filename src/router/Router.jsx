@@ -20,7 +20,7 @@ const router = createBrowserRouter([
           fetch(`http://localhost:6969/chef/${params.name}`),
       },
       {
-        path: "login",
+        path: "signInSignUp",
         element: <Login />,
       },
     ],

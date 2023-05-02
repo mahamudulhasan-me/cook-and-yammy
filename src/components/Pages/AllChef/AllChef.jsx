@@ -41,7 +41,7 @@ const AllChef = () => {
               </p>
 
               <p className="w-4/5 mx-auto mb-3">
-                {chef.bio.length > 200 ? chef.bio.slice(0, 100) : chef.bio}
+                {chef?.bio?.length > 200 ? chef.bio.slice(0, 100) : chef.bio}
                 <span className="text-primary font-semibold">...See More</span>
               </p>
               <div className="flex items-center  gap-1 font-semibold ">

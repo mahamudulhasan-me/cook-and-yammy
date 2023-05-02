@@ -73,7 +73,7 @@ const Header = () => {
           </div>
         ) : (
           <Link
-            to={"./login"}
+            to={"./signInSignUp"}
             className="px-5  py-3 bg-primary text-white font-semibold rounded-lg"
           >
             SignIn
