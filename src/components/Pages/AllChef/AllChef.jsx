@@ -8,7 +8,7 @@ import like from "../../../assets/images/icon/heart.png";
 import SectionHead from "../../Shared/SectionHead/SectionHead";
 const AllChef = () => {
   const [chefInfo, setChefInfo] = useState([]);
-  console.log(chefInfo);
+
   useEffect(() => {
     fetch(`http://localhost:6969/chefInfo`)
       .then((response) => response.json())
