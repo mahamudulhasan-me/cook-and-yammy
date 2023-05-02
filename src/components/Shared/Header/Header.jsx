@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/yammyLogo.png";
+import { AuthContext } from "../../../provider/AuthProvider";
 const Header = () => {
-  const user = false;
+  const { user } = useContext(AuthContext);
+  console.log(user);
   return (
     <div className=" px-[10%] py-2 z-50 sticky top-0 text-white bg-slate-900 flex items-center justify-between">
       <div className="navbar ">
@@ -61,7 +63,7 @@ const Header = () => {
               data-tip={user?.displayName}
             >
               <img
-                src=""
+                src={user?.photoURl}
                 alt=""
                 className="w-12 h-12 rounded-full ring ring-primary "
               />
