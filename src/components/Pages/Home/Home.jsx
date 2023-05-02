@@ -1,12 +1,12 @@
 import React from "react";
+import AllChef from "../AllChef/AllChef";
 import Banner from "./Banner/Banner";
-import RecipeSlider from "./RecipeSlider/RecipeSlider";
 
 const Home = () => {
   return (
     <div className="relative -top-24 z-0">
       <Banner />
-      <RecipeSlider />
+      <AllChef />
     </div>
   );
 };
