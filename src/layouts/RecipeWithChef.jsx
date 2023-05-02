@@ -5,6 +5,8 @@ import banner from "../assets/images/chefBanner.jpg";
 import experience from "../assets/images/icon/career.png";
 import recipe from "../assets/images/icon/chef.png";
 import like from "../assets/images/icon/heart.png";
+import RecipeDetails from "../components/Shared/RecipeDetails/RecipeDetails";
+import TrendingRecipe from "../components/Shared/RecipeDetails/TrendingRecipe";
 import SectionHead from "../components/Shared/SectionHead/SectionHead";
 const RecipeWithChef = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -22,6 +24,7 @@ const RecipeWithChef = () => {
   } = chefDetails;
   const { name } = useParams();
   const recifeDetails = useLoaderData();
+  console.log(recifeDetails);
   useEffect(() => {
     fetch(`http://localhost:6969/chefInfo`)
       .then((response) => response.json())
@@ -89,6 +92,19 @@ const RecipeWithChef = () => {
             <SectionHead>
               <span className="text-primary">{chef_name}&apos;s</span> Recipes
             </SectionHead>
+            <div className="grid grid-cols-12 gap-10">
+              <div className="col-span-8">
+                {recifeDetails.map((recipe) => (
+                  <RecipeDetails key={recipe.id} recipe={recipe} />
+                ))}
+              </div>
+              <div className="col-span-4 ">
+                <SectionHead>Trending Recipes</SectionHead>
+                {recifeDetails.map((recipe) => (
+                  <TrendingRecipe key={recipe.id} recipe={recipe} />
+                ))}
+              </div>
+            </div>
           </div>
         </>
       )}
