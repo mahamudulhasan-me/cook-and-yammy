@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import "./styles.css";
+import "./recipeSliderStyles.css";
 
 // import required modules
 import { Autoplay } from "swiper";
@@ -15,9 +15,10 @@ import recipe2 from "../../../../assets/images/recipe/6rjct18g_3i.jpg";
 import recipe3 from "../../../../assets/images/recipe/evoiiaivrzu.jpg";
 import recipe5 from "../../../../assets/images/recipe/t8htmte4o_g.jpg";
 import recipe6 from "../../../../assets/images/recipe/zyx6a0reb18.jpg";
+import CategoryTag from "../../../Shared/CategoryTag";
 export default function RecipeSlider() {
   return (
-    <div className=" recipeSlider">
+    <div className=" recipeSlider mt-20">
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
@@ -43,38 +44,68 @@ export default function RecipeSlider() {
         modules={[Autoplay]}
         className="mySwiper h-5"
       >
-        <SwiperSlide className="h-5 recipe">
-          <img src={recipe1} alt="" className="h-5" />
+        <SwiperSlide>
+          <img src={recipe1} alt="" />
+          <CategoryTag bgColor="bg-orange-500 absolute bottom-10">
+            Easy
+          </CategoryTag>
         </SwiperSlide>
         <SwiperSlide>
           <img src={recipe2} alt="" />
+          <CategoryTag bgColor="bg-violet-500 absolute bottom-10">
+            Meat
+          </CategoryTag>
         </SwiperSlide>
         <SwiperSlide>
           <img src={recipe3} alt="" />
+          <CategoryTag bgColor="bg-yellow-500 absolute bottom-10">
+            Chicken
+          </CategoryTag>
         </SwiperSlide>
 
         <SwiperSlide>
           <img src={recipe5} alt="" className="h-96" />
+          <CategoryTag bgColor="bg-blue-600 absolute bottom-10">
+            Pasta
+          </CategoryTag>
         </SwiperSlide>
         <SwiperSlide>
           <img src={recipe6} alt="" className="h-96" />
+          <CategoryTag bgColor="bg-rose-600 absolute bottom-10">
+            Burger
+          </CategoryTag>
         </SwiperSlide>
-        {/* <SwiperSlide>
+        <SwiperSlide>
           <img src={recipe1} alt="" />
+          <CategoryTag bgColor="bg-lime-500 absolute bottom-10">
+            Basic
+          </CategoryTag>
         </SwiperSlide>
         <SwiperSlide>
           <img src={recipe2} alt="" />
+          <CategoryTag bgColor="bg-indigo-800 absolute bottom-10">
+            Mutton
+          </CategoryTag>
         </SwiperSlide>
         <SwiperSlide>
           <img src={recipe3} alt="" />
+          <CategoryTag bgColor="bg-yellow-500 absolute bottom-10">
+            Chicken
+          </CategoryTag>
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src={recipe5} alt="" />
+          <img src={recipe5} alt="" className="h-96" />
+          <CategoryTag bgColor="bg-blue-600 absolute bottom-10">
+            Pasta
+          </CategoryTag>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={recipe6} alt="" />
-        </SwiperSlide> */}
+          <img src={recipe6} alt="" className="h-96" />
+          <CategoryTag bgColor="bg-rose-600 absolute bottom-10">
+            Burger
+          </CategoryTag>
+        </SwiperSlide>
       </Swiper>
     </div>
   );

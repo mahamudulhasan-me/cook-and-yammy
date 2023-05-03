@@ -88,7 +88,7 @@ const RecipeWithChef = () => {
               </div>
             </div>
           </div>
-          <div className="container">
+          <div className="container relative">
             <SectionHead>
               <span className="text-primary">{chef_name}&apos;s</span> Recipes
             </SectionHead>
@@ -98,13 +98,17 @@ const RecipeWithChef = () => {
                   <RecipeDetails key={recipe.id} recipe={recipe} />
                 ))}
               </div>
-              <div className="col-span-4 ">
-                <SectionHead>
-                  <span className="text-primary">Trending</span> Recipes
-                </SectionHead>
-                {recifeDetails.map((recipe) => (
-                  <TrendingRecipe key={recipe.id} recipe={recipe} />
-                ))}
+              <div className="col-span-4 relative">
+                <div className="sticky top-28">
+                  <SectionHead>
+                    <span className="text-primary">Trending</span> Recipes
+                  </SectionHead>
+                  <div className="space-y-5">
+                    {recifeDetails.reverse().map((recipe) => (
+                      <TrendingRecipe key={recipe.id} recipe={recipe} />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
