@@ -6,7 +6,7 @@ import {
   FaGithub,
   FaGoogle,
 } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import bg from "../../../assets/images/loginBg.jpg";
 import logo from "../../../assets/images/yammyLogo.png";
@@ -19,19 +19,21 @@ const Login = () => {
   const [signInPage, setSignInPage] = useState(true);
   const [error, setError] = useState("");
 
-  // user data from auth contex
+  // user data from auth context
   const { logInWithGoogle, logInWithGithub, loginWithEmailAndPassword } =
     useContext(AuthContext);
   // navigate redirect location
   const navigate = useNavigate();
+  const location = useLocation();
+  const path = location?.state?.redirectPath || "/";
 
   // login with google
   const handleGoogleSignIn = () => {
     logInWithGoogle()
       .then((user) => {
         const loggedUser = user.user;
-        toast(`Welcome ${loggedUser.displayName}`);
-        navigate("/");
+        toast.success(`Welcome ${loggedUser.displayName}`);
+        navigate(path);
       })
       .catch((error) => setError(error.message));
   };
@@ -41,18 +43,32 @@ const Login = () => {
     logInWithGithub()
       .then((user) => {
         const loggedUser = user.user;
-        toast(`Welcome ${loggedUser.displayName}`);
-        navigate("/");
+        toast.success(`Welcome ${loggedUser.displayName}`);
+        navigate(path);
         setError("");
       })
       .catch((error) => {
         setError(error.message);
-        toast(error);
       });
   };
 
   // login with email and password
-
+  const handleEmailPasswordSignIn = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    if (email && password) {
+      loginWithEmailAndPassword(email, password)
+        .then((user) => {
+          const loggedUser = user.user;
+          toast.success(`Welcome ${loggedUser.displayName}`);
+          navigate(path);
+          setError("");
+        })
+        .catch((error) => setError(error.message));
+    }
+  };
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
@@ -93,7 +109,10 @@ const Login = () => {
             {signInPage ? (
               <>
                 <SectionHead>Login to your Account</SectionHead>
-                <form className="space-y-4 w-4/5">
+                <form
+                  onSubmit={handleEmailPasswordSignIn}
+                  className="space-y-4 w-4/5"
+                >
                   <input
                     type="email"
                     name="email"
@@ -125,6 +144,11 @@ const Login = () => {
                       Forget Password?
                     </Link>
                   </div>
+                  {error && (
+                    <p className="text-rose-500 font-semibold">
+                      {error.includes("Firebase") ? error.slice(9) : error}
+                    </p>
+                  )}
                   <button className="bg-primary text-white font-semibold w-full rounded-md py-3">
                     Login with email
                   </button>

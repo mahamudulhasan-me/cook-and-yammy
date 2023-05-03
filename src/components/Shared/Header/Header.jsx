@@ -10,9 +10,9 @@ const Header = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        toast("User Logged Out");
+        toast.warning("User Logged Out");
       })
-      .catch((err) => {});
+      .catch((err) => toast.error(err.message));
   };
   return (
     <div className=" px-[10%] py-2 z-50 sticky top-0 text-white bg-slate-900 flex items-center justify-between">

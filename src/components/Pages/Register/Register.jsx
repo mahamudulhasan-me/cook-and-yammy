@@ -47,12 +47,7 @@ const Register = ({ setSignInPage, signInPage }) => {
             displayName: name,
             photoURL: photo,
           })
-            .then(
-              loggedUser.displayName &&
-                toast(
-                  `<p className="text-green-500">Welcome ${loggedUser.displayName}</p>`
-                )
-            )
+            .then(toast.success("Registration Successful"))
             .catch((err) => toast(err.message));
 
           navigate("/");

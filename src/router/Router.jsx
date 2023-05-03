@@ -3,6 +3,7 @@ import Home from "../components/Pages/Home/Home";
 import Login from "../components/Pages/Login/Login";
 import Main from "../layouts/Main";
 import RecipeWithChef from "../layouts/RecipeWithChef";
+import ProtectedRoute from "../protectedRoute/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,11 @@ const router = createBrowserRouter([
       },
       {
         path: "chef/:name",
-        element: <RecipeWithChef />,
+        element: (
+          <ProtectedRoute>
+            <RecipeWithChef />
+          </ProtectedRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:6969/chef/${params.name}`),
       },

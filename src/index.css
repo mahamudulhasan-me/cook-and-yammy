@@ -6,6 +6,9 @@
 body {
   font-family: "Aleo", serif;
 } */
+.navbar {
+  width: 86% !important;
+}
 .container {
   @apply px-[10%] py-20;
 }
