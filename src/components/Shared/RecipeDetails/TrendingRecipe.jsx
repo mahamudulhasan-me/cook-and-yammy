@@ -1,5 +1,6 @@
 import React from "react";
 import { FaClock } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 import CategoryTag from "../CategoryTag";
 
 const TrendingRecipe = ({ recipe }) => {
@@ -7,7 +8,9 @@ const TrendingRecipe = ({ recipe }) => {
     recipe;
   return (
     <div className="border rounded-t-lg p-3 bg-gray-50">
-      <img src={food_image} alt="" className="rounded-lg mb-5" />
+      <LazyLoad>
+        <img src={food_image} alt="" className="rounded-lg mb-5" />
+      </LazyLoad>
       <div className="">
         <CategoryTag bgColor="bg-violet-500">Pasta</CategoryTag>
         <h4 className="font-semibold text-xl mt-6 hover:underline">

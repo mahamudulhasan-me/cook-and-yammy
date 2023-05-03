@@ -1,6 +1,7 @@
 import { Rating } from "@smastrom/react-rating";
 import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 import experience from "../../../assets/images/icon/career.png";
 import recipe from "../../../assets/images/icon/chef.png";
@@ -23,11 +24,13 @@ const AllChef = () => {
             key={chef.id}
             className=" p-3 text-center mb-12 shadow-md hover:shadow-xl"
           >
-            <img
-              src={chef.chef_picture}
-              className=" rounded-md object-cover w-4/5 mx-auto"
-              alt=""
-            />
+            <LazyLoad threshold={0.95}>
+              <img
+                src={chef.chef_picture}
+                className=" rounded-md object-cover w-4/5 mx-auto"
+                alt=""
+              />
+            </LazyLoad>
             <div>
               <h3 className=" text-2xl mb-5 mt-2">{chef.chef_name}</h3>
 

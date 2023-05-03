@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from "react";
 import Headroom from "react-headroom";
+import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import logo from "../../../assets/images/yammyLogo.png";
 import { AuthContext } from "../../../provider/AuthProvider";
+import ActiveLink from "../ActiveLink/ActiveLink";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   //  handle user logout system
@@ -43,10 +45,10 @@ const Header = () => {
                 className="menu font-semibold menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <Link>Home</Link>
+                  <ActiveLink to={"/"}>Home</ActiveLink>
                 </li>
                 <li>
-                  <a>Blog</a>
+                  <ActiveLink to={"/blog"}>Blog</ActiveLink>
                 </li>
               </ul>
             </div>
@@ -57,11 +59,10 @@ const Header = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 font-semibold">
               <li>
-                <a>Home</a>
+                <ActiveLink to={"/"}>Home</ActiveLink>
               </li>
-
               <li>
-                <a>Blog</a>
+                <ActiveLink to={"/blog"}>Blog</ActiveLink>
               </li>
             </ul>
           </div>
@@ -73,11 +74,13 @@ const Header = () => {
                 className="tooltip hover:tooltip-open tooltip-bottom"
                 data-tip={user?.displayName}
               >
-                <img
-                  src={user.photoURL}
-                  alt=""
-                  className="w-12 h-12 rounded-full ring ring-primary "
-                />
+                <LazyLoad>
+                  <img
+                    src={user.photoURL}
+                    alt=""
+                    className="w-12 h-12 rounded-full ring ring-primary "
+                  />
+                </LazyLoad>
               </div>
 
               <button

@@ -1,6 +1,7 @@
 import { Rating } from "@smastrom/react-rating";
 import React, { useState } from "react";
 import { FaAngleDoubleRight, FaRegBookmark, FaSortDown } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 import { toast } from "react-toastify";
 import SectionHeadMini from "../SectionHead/SectionHeadMini";
 const RecipeDetails = ({ recipe }) => {
@@ -21,7 +22,9 @@ const RecipeDetails = ({ recipe }) => {
   } = recipe;
   return (
     <div className="border p-5 rounded-lg mb-10">
-      <img className="h-[22rem] w-full rounded-xl" src={food_image} alt="" />
+      <LazyLoad>
+        <img className="h-[22rem] w-full rounded-xl" src={food_image} alt="" />
+      </LazyLoad>
       <div>
         <h2 className="text-2xl font-semibold mt-5">{recipe_name}</h2>
         <div className="flex items-center  gap-10 mt-3 mb-5">
