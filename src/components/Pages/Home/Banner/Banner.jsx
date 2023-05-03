@@ -13,6 +13,8 @@ import { Autoplay, Pagination } from "swiper";
 import banner1 from "../../../../assets/images/banner1.jpg";
 import banner2 from "../../../../assets/images/banner2.jpg";
 // import banner4 from "../../../../assets/images/banner4.";
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import banner5 from "../../../../assets/images/banner5.jpg";
 import CategoryTag from "../../../Shared/CategoryTag";
 export default function Banner() {
@@ -34,7 +36,7 @@ export default function Banner() {
             className="w-full min-h-screen  bg-cover bg-slate-800 bg-blend-overlay"
             style={{ backgroundImage: `url(${banner5})` }}
           >
-            <div className="flex justify-center items-center top-56 absolute left-40 text-left ">
+            <div className="flex justify-center items-center top-48  absolute left-40 text-left ">
               <div>
                 <MovingText
                   type="slideInFromLeft"
@@ -58,11 +60,24 @@ export default function Banner() {
                   iteration="1"
                   fillMode="none"
                 >
-                  <p className="text-white uppercase flex items-center gap-6 mt-10">
-                    <span>Category</span>{" "}
-                    <CategoryTag bgColor="bg-purple-500">Pasta</CategoryTag>
-                    <span>Date- May 2, 2023</span>
+                  <p className="text-white uppercase flex items-center text-sm gap-6 mt-5">
+                    <span className="bg-primary bg-opacity-40 py-1  rounded-xl px-2">
+                      Category
+                    </span>{" "}
+                    <CategoryTag bgColor="bg-primary bg-opacity-30">
+                      Pasta
+                    </CategoryTag>
+                    <span className="bg-primary bg-opacity-20 py-1  rounded-xl px-2">
+                      Date- May 2, 2023
+                    </span>
                   </p>
+                  <Link
+                    to={"./chefList"}
+                    className="bg-primary w-36 h-10 mt-7 gap-2 flex justify-center items-center  text-white font-semibold rounded-sm"
+                  >
+                    View Recipe
+                    <FaArrowRight />
+                  </Link>
                 </MovingText>
               </div>
             </div>

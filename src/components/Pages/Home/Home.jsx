@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="relative -top-24 z-0">
       <Banner />
-      <RecipeSlider></RecipeSlider>
+      <RecipeSlider />
       <AllChef />
       <BestChickenRecipe />
     </div>
