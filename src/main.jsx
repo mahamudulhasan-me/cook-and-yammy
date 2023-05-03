@@ -1,6 +1,7 @@
 import "@smastrom/react-rating/style.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "react-loading-skeleton/dist/skeleton.css";
 import { RouterProvider } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

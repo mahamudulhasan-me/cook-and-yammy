@@ -12,7 +12,7 @@ const Main = () => {
     <div>
       {loading ? (
         <div className="flex h-screen justify-center items-center ease-in-out transition-all">
-          <img src={preloader} alt="" className="w-2/6 " />
+          <img src={preloader} alt="" className="md:w-2/6 " />
         </div>
       ) : (
         <>
