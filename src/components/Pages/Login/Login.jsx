@@ -20,7 +20,8 @@ const Login = () => {
   const [error, setError] = useState("");
 
   // user data from auth contex
-  const { logInWithGoogle } = useContext(AuthContext);
+  const { logInWithGoogle, logInWithGithub, loginWithEmailAndPassword } =
+    useContext(AuthContext);
   // navigate redirect location
   const navigate = useNavigate();
 
@@ -34,6 +35,24 @@ const Login = () => {
       })
       .catch((error) => setError(error.message));
   };
+
+  //login with github
+  const handleGitHubSignIn = () => {
+    logInWithGithub()
+      .then((user) => {
+        const loggedUser = user.user;
+        toast(`Welcome ${loggedUser.displayName}`);
+        navigate("/");
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+        toast(error);
+      });
+  };
+
+  // login with email and password
+
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
@@ -58,7 +77,10 @@ const Login = () => {
               >
                 <FaGoogle /> SignIn With Google
               </Link>
-              <Link className="socialLogin bg-[#171515]">
+              <Link
+                onClick={handleGitHubSignIn}
+                className="socialLogin bg-[#171515]"
+              >
                 <FaGithub /> SignIn With GitHub
               </Link>
               <Link className="socialLogin bg-[#4267B2]">

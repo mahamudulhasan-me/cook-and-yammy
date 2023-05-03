@@ -1,15 +1,69 @@
-import React, { useState } from "react";
+import { updateProfile } from "firebase/auth";
+import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../../provider/AuthProvider";
 import SectionHead from "../../Shared/SectionHead/SectionHead";
 
 const Register = ({ setSignInPage, signInPage }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const { createNewUser, updateUserInfo } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passError, setPassError] = useState("");
 
+  const navigate = useNavigate();
+  const getEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const getPassword = (e) => {
+    setPassError("");
+    const password = e.target.value;
+    if (!/(?=.*?[A-Z])/.test(password)) {
+      setPassError("At least one upper case");
+    } else if (!/(?=.*?[a-z])/.test(password)) {
+      setPassError("At least one lower case");
+    } else if (!/(?=.*?[0-9])/.test(password)) {
+      setPassError("At least one digit");
+    } else if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
+      setPassError("At least one special character");
+    } else if (password.length < 6) {
+      setPassError("Minimum password length is 6 characters");
+    }
+    setPassword(password);
+  };
+  // create new user with email and password
+  const registerUser = (e) => {
+    e.preventDefault();
+    if (!passError) {
+      const form = e.target;
+      const name = form.name.value;
+      const photo = form.photoURL.value;
+      createNewUser(email, password)
+        .then((userCredential) => {
+          const loggedUser = userCredential.user;
+          updateProfile(loggedUser, {
+            displayName: name,
+            photoURL: photo,
+          })
+            .then(
+              loggedUser.displayName &&
+                toast(
+                  `<p className="text-green-500">Welcome ${loggedUser.displayName}</p>`
+                )
+            )
+            .catch((err) => toast(err.message));
+
+          navigate("/");
+        })
+        .catch((error) => setPassError(error.message));
+    }
+  };
   return (
     <>
       <SectionHead>Sign Up For Free</SectionHead>
-      <form className="space-y-4 w-4/5">
+      <form onSubmit={registerUser} className="space-y-4 w-4/5">
         <input
           type="text"
           name="name"
@@ -18,13 +72,16 @@ const Register = ({ setSignInPage, signInPage }) => {
         />
         <input
           type="url"
-          name="photoUrl"
-          placeholder="Photo URl"
+          name="photoURL"
+          placeholder="Photo URL"
           className="signInUp-input"
         />
         <input
           type="email"
           name="email"
+          required
+          value={email}
+          onChange={getEmail}
           placeholder="Email Address"
           className="signInUp-input"
         />
@@ -33,6 +90,8 @@ const Register = ({ setSignInPage, signInPage }) => {
           <input
             type={`${showPassword ? "text" : "password"}`}
             name="password"
+            value={password}
+            onChange={getPassword}
             placeholder="Password"
             className="signInUp-input"
           />
@@ -43,7 +102,7 @@ const Register = ({ setSignInPage, signInPage }) => {
             {showPassword ? <FaEye /> : <FaEyeSlash />}
           </div>
         </div>
-        <p></p>
+        <p className="font-semibold text-rose-600">{passError}</p>
         <button className="bg-primary text-white font-semibold w-full rounded-md py-3">
           Sign up with email
         </button>

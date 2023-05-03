@@ -1,11 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import logo from "../../../assets/images/yammyLogo.png";
 import { AuthContext } from "../../../provider/AuthProvider";
 const Header = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const { user, logOut } = useContext(AuthContext);
+  //  handle user logout system
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast("User Logged Out");
+      })
+      .catch((err) => {});
+  };
   return (
     <div className=" px-[10%] py-2 z-50 sticky top-0 text-white bg-slate-900 flex items-center justify-between">
       <div className="navbar ">
@@ -57,19 +65,22 @@ const Header = () => {
       </div>
       <div>
         {user ? (
-          <div className="flex gap-3">
+          <div className="flex gap-3 items-center">
             <div
               className="tooltip hover:tooltip-open tooltip-bottom"
               data-tip={user?.displayName}
             >
               <img
-                src={user?.photoURl}
+                src={user.photoURL}
                 alt=""
                 className="w-12 h-12 rounded-full ring ring-primary "
               />
             </div>
 
-            <button className="px-5 bg-primary text-white font-semibold rounded-lg">
+            <button
+              onClick={handleLogOut}
+              className="px-3 py-2 bg-primary text-white font-semibold rounded-lg"
+            >
               LogOut
             </button>
           </div>
