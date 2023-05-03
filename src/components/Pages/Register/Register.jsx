@@ -12,6 +12,7 @@ const Register = ({ setSignInPage, signInPage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passError, setPassError] = useState("");
+  const [acceptTerms, setAcceptTerms] = useState(true);
 
   const navigate = useNavigate();
   const getEmail = (e) => {
@@ -55,6 +56,7 @@ const Register = ({ setSignInPage, signInPage }) => {
         .catch((error) => setPassError(error.message));
     }
   };
+
   return (
     <>
       <SectionHead>Sign Up For Free</SectionHead>
@@ -86,6 +88,7 @@ const Register = ({ setSignInPage, signInPage }) => {
             type={`${showPassword ? "text" : "password"}`}
             name="password"
             value={password}
+            required
             onChange={getPassword}
             placeholder="Password"
             className="signInUp-input"
@@ -98,7 +101,27 @@ const Register = ({ setSignInPage, signInPage }) => {
           </div>
         </div>
         <p className="font-semibold text-rose-600">{passError}</p>
-        <button className="bg-primary text-white font-semibold w-full rounded-md py-3">
+        <div className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            name=""
+            id=""
+            className="h-4 w-4"
+            onClick={() => setAcceptTerms(!acceptTerms)}
+          />
+          <label htmlFor="">
+            Accept{" "}
+            <Link className="text-blue-600 hover:underline">
+              Terms & Condition
+            </Link>
+          </label>
+        </div>
+        <button
+          disabled={acceptTerms}
+          className={`bg-primary text-white font-semibold w-full rounded-md py-3 ${
+            acceptTerms ? "bg-opacity-70" : "bg-opacity-100"
+          }`}
+        >
           Sign up with email
         </button>
         <p className="text-center">

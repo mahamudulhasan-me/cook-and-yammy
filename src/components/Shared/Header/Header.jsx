@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <Headroom>
       {" "}
-      <div className=" px-[10%] py-2 z-50 sticky top-0 text-white bg-slate-900 bg-opacity-50 flex items-center justify-between">
+      <div className=" px-[10%] py-2 z-50 sticky top-0 text-white bg-slate-900 bg-opacity-70 flex items-center justify-between">
         <div className="navbar ">
           <div className="navbar-start">
             <div className="dropdown">

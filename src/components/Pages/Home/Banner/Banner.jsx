@@ -23,7 +23,7 @@ export default function Banner() {
           dynamicBullets: true,
         }}
         // autoplay={{
-        //   delay: 2500,
+        //   delay: 3000,
         //   disableOnInteraction: false,
         // }}
         modules={[Autoplay, Pagination]}
@@ -31,10 +31,10 @@ export default function Banner() {
       >
         <SwiperSlide>
           <div
-            className="w-full h-screen  bg-cover bg-slate-700 bg-blend-overlay"
+            className="w-full min-h-screen  bg-cover bg-slate-800 bg-blend-overlay"
             style={{ backgroundImage: `url(${banner5})` }}
           >
-            <div className="flex justify-center items-center top-60 absolute left-40 text-left ">
+            <div className="flex justify-center items-center top-56 absolute left-40 text-left ">
               <div>
                 <MovingText
                   type="slideInFromLeft"

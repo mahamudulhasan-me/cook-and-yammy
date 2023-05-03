@@ -42,18 +42,12 @@ const RecipeDetails = ({ recipe }) => {
           <SectionHeadMini>Ingredients</SectionHeadMini>
           {ingredients.length > 3 && seeMore2
             ? ingredients.slice(0, 3).map((ingredient, index) => (
-                <p
-                  className="font-semibold flex gap-1 items-center"
-                  key={index}
-                >
+                <p className="flex gap-1 items-center" key={index}>
                   <FaAngleDoubleRight className="text-primary" /> {ingredient}
                 </p>
               ))
             : ingredients.map((ingredient, index) => (
-                <p
-                  className="font-semibold flex gap-1 items-center"
-                  key={index}
-                >
+                <p className=" flex gap-1 items-center" key={index}>
                   <FaAngleDoubleRight className="text-primary" /> {ingredient}
                 </p>
               ))}
@@ -71,18 +65,12 @@ const RecipeDetails = ({ recipe }) => {
           <div className="space-y-2">
             {directions.length > 3 && seeMore
               ? directions.slice(0, 3).map((direction, index) => (
-                  <p
-                    className="font-semibold flex gap-1 items-center"
-                    key={index}
-                  >
+                  <p className=" flex gap-1 items-center" key={index}>
                     <FaAngleDoubleRight className="text-primary" /> {direction}
                   </p>
                 ))
               : directions.map((direction, index) => (
-                  <p
-                    className="font-semibold flex gap-1 items-center"
-                    key={index}
-                  >
+                  <p className=" flex gap-1 items-center" key={index}>
                     <FaAngleDoubleRight className="text-primary" /> {direction}
                   </p>
                 ))}
