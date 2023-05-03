@@ -33,10 +33,10 @@ export default function Banner() {
       >
         <SwiperSlide>
           <div
-            className="w-full min-h-screen  bg-cover bg-slate-800 bg-blend-overlay"
+            className="w-full md:min-h-screen min-h-[calc(100vh-15rem)]  bg-cover bg-slate-800 bg-blend-overlay"
             style={{ backgroundImage: `url(${banner5})` }}
           >
-            <div className="flex justify-center items-center top-48  absolute left-40 text-left ">
+            <div className="flex justify-center items-center top-48  left-10 md:left-40 absolute  text-left ">
               <div>
                 <MovingText
                   type="slideInFromLeft"
@@ -47,7 +47,7 @@ export default function Banner() {
                   iteration="1"
                   fillMode="none"
                 >
-                  <h1 className="text-white font-semibold text-7xl justify-start">
+                  <h1 className="text-white font-semibold md:text-7xl text-4xl justify-start">
                     Broccoli Slaw <br /> slow cooking <br /> Recipe
                   </h1>
                 </MovingText>
@@ -60,17 +60,19 @@ export default function Banner() {
                   iteration="1"
                   fillMode="none"
                 >
-                  <p className="text-white uppercase flex items-center text-sm gap-6 mt-5">
-                    <span className="bg-primary bg-opacity-40 py-1  rounded-xl px-2">
+                  <div className="text-white uppercase space-y-3  md:space-y-0 flex md:items-center md:flex-row flex-col font-semibold text-sm md:gap-6 mt-5">
+                    <p className="bg-primary bg-opacity-40 py-1   rounded-xl px-2 w-24">
                       Category
-                    </span>{" "}
-                    <CategoryTag bgColor="bg-primary bg-opacity-30">
-                      Pasta
-                    </CategoryTag>
-                    <span className="bg-primary bg-opacity-20 py-1  rounded-xl px-2">
+                    </p>
+                    <p>
+                      <CategoryTag bgColor="bg-primary bg-opacity-30 ">
+                        Pasta
+                      </CategoryTag>
+                    </p>
+                    <p className="bg-primary bg-opacity-20 py-1  rounded-xl px-2 w-36">
                       Date- May 2, 2023
-                    </span>
-                  </p>
+                    </p>
+                  </div>
                   <Link
                     to={"./chefList"}
                     className="bg-primary w-36 h-10 mt-7 gap-2 flex justify-center items-center  text-white font-semibold rounded-sm"

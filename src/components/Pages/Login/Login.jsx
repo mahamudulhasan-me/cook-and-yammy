@@ -72,15 +72,15 @@ const Login = () => {
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
-      className="min-h-[calc(100vh-5rem)] py-5 bg-cover bg-slate-900 bg-blend-overlay flex justify-center items-center"
+      className="min-h-[calc(100vh-5rem)] py-5 bg-cover bg-slate-900 bg-blend-overlay flex justify-center  items-center"
     >
-      <div className="w-3/5 mx-auto">
+      <div className="md:w-3/5 px-2 md:px-0 mx-auto">
         <div className=" flex bg-slate-300 gap-1 px-6 py-3 rounded-t-xl">
           <div className="w-3 h-3 bg-red-600 rounded-full"></div>
           <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
           <div className="w-3 h-3 bg-green-600 rounded-full"></div>
         </div>
-        <div className="grid grid-cols-12  ">
+        <div className="md:grid grid-cols-12  ">
           <div className="col-span-5 bg-slate-950 bg-opacity-60 p-10 text-white">
             <img src={logo} alt="" className="mt-5" />
             <p className="font-semibold mt-4 mb-10">
@@ -111,7 +111,7 @@ const Login = () => {
                 <SectionHead>Login to your Account</SectionHead>
                 <form
                   onSubmit={handleEmailPasswordSignIn}
-                  className="space-y-4 w-4/5"
+                  className="space-y-4 md:w-4/5"
                 >
                   <input
                     type="email"

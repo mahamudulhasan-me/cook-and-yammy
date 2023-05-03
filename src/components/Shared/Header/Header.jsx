@@ -42,7 +42,7 @@ const Header = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu font-semibold menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu bg-slate-900 bg-opacity-60  font-semibold menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52"
               >
                 <li>
                   <ActiveLink to={"/"}>Home</ActiveLink>
@@ -52,7 +52,7 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-            <Link>
+            <Link className="hidden md:block">
               <img src={logo} alt="" className="w-3/5" />
             </Link>
           </div>

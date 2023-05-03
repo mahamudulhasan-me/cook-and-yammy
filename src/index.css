@@ -7,7 +7,7 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 .navbar {
-  width: 86% !important;
+  @apply md:w-4/5 w-1/2 !important;
 }
 .container {
   @apply px-[10%] py-20;

@@ -16,7 +16,7 @@ import SectionHeadMini from "../SectionHead/SectionHeadMini";
 const Footer = () => {
   return (
     <div className="px-[5%]   bg-[#F7F6F3] pt-10">
-      <div className=" grid  items-center grid-cols-4 gap-8 pb-10 border-b">
+      <div className=" grid  items-center lg:grid-cols-4 md:grid-cols-2 gap-8 pb-10 border-b">
         <div
           style={{ backgroundImage: `url(${footerAbout})` }}
           className="bg-cover p-5"
@@ -106,7 +106,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="px-[5%] py-4 flex justify-between">
+      <div className="px-[5%] py-4 flex flex-col md:flex-row justify-between">
         <div className="flex gap-4 items-center">
           <FaFacebook />
           <FaPinterest />

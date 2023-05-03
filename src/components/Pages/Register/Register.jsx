@@ -60,7 +60,7 @@ const Register = ({ setSignInPage, signInPage }) => {
   return (
     <>
       <SectionHead>Sign Up For Free</SectionHead>
-      <form onSubmit={registerUser} className="space-y-4 w-4/5">
+      <form onSubmit={registerUser} className="space-y-4 md:w-4/5">
         <input
           type="text"
           name="name"

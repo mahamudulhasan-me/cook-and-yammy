@@ -23,7 +23,11 @@ const RecipeDetails = ({ recipe }) => {
   return (
     <div className="border p-5 rounded-lg mb-10">
       <LazyLoad>
-        <img className="h-[22rem] w-full rounded-xl" src={food_image} alt="" />
+        <img
+          className="md:h-[22rem] w-full rounded-xl"
+          src={food_image}
+          alt=""
+        />
       </LazyLoad>
       <div>
         <h2 className="text-2xl font-semibold mt-5">{recipe_name}</h2>

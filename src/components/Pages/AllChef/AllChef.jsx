@@ -18,7 +18,7 @@ const AllChef = () => {
   return (
     <div className="container2">
       <SectionHead>Meet Our Legend Chefs</SectionHead>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid lg:grid-cols-3 gap-3">
         {chefInfo.map((chef) => (
           <div
             key={chef.id}
@@ -27,7 +27,7 @@ const AllChef = () => {
             <LazyLoad threshold={0.95}>
               <img
                 src={chef.chef_picture}
-                className=" rounded-md object-cover w-4/5 mx-auto"
+                className=" rounded-md object-cover md:w-4/5 mx-auto"
                 alt=""
               />
             </LazyLoad>
