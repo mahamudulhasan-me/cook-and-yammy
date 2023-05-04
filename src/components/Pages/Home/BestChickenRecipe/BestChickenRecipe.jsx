@@ -24,10 +24,10 @@ const BestChickenRecipe = () => {
                 <CategoryTag bgColor="bg-rose-500">VEGAN</CategoryTag>
               </div>
               <h2 className="font-semibold text-4xl text-white mb-5">
-                Spicy Serrano Pineapple <br /> Margarita.
+                Chicken Sauce Piquante <br /> Margarita.
               </h2>
               <div className="flex items-center justify-center text-white text-lg gap-6">
-                <p>June 7, 2021 </p>
+                <p>April 15, 2023 </p>
                 <p className="flex gap-1 items-center ">
                   <FaClock className="text-primary" /> 16 min Cook
                 </p>
@@ -39,12 +39,12 @@ const BestChickenRecipe = () => {
           <div>
             <img src={ckImage2} alt="" className="rounded-lg mb-5" />
             <div>
-              <CategoryTag bgColor="bg-violet-500">Pasta</CategoryTag>
+              <CategoryTag bgColor="bg-violet-500">Better</CategoryTag>
               <h4 className="font-semibold text-xl mt-6 hover:underline">
-                Broccoli Slaw slow cooking Recipe
+                Popcorn Chicken Cooking Recipe
               </h4>
               <div className="flex items-center text-lg text-gray-600 justify-between">
-                <p>June 7, 2021 </p>
+                <p>March, 2023 </p>
                 <p className="flex gap-1 items-center ">
                   <FaClock className="text-primary" /> 16 min Cook
                 </p>
@@ -56,7 +56,7 @@ const BestChickenRecipe = () => {
             <div>
               <CategoryTag bgColor="bg-orange-500">Chicken</CategoryTag>
               <h4 className="font-semibold text-xl mt-6 hover:underline">
-                Broccoli Slaw slow cooking Recipe
+                Chicken and Dumplings Cooking Recipe
               </h4>
               <div className="flex items-center text-lg text-gray-600 justify-between">
                 <p>June 7, 2021 </p>
@@ -67,14 +67,14 @@ const BestChickenRecipe = () => {
             </div>
           </div>
           <div>
-            <img src={ckImage4} alt="" className="rounded-lg mb-5" />
+            <img src="https://rb.gy/9m5sl" alt="" className="rounded-lg mb-5" />
             <div>
-              <CategoryTag bgColor="bg-red-500">Meat</CategoryTag>
+              <CategoryTag bgColor="bg-red-500">Basic</CategoryTag>
               <h4 className="font-semibold text-xl mt-6 hover:underline">
-                Broccoli Slaw slow cooking Recipe
+                Chicken Maryland Cooking Recipe
               </h4>
               <div className="flex items-center text-lg text-gray-600 justify-between">
-                <p>June 7, 2021 </p>
+                <p>April 7, 2023 </p>
                 <p className="flex gap-1 items-center ">
                   <FaClock className="text-primary" /> 16 min Cook
                 </p>
@@ -84,12 +84,12 @@ const BestChickenRecipe = () => {
           <div>
             <img src={ckImage4} alt="" className="rounded-lg mb-5" />
             <div>
-              <CategoryTag bgColor="bg-green-500">Sweets</CategoryTag>
+              <CategoryTag bgColor="bg-green-500">Easy</CategoryTag>
               <h4 className="font-semibold text-xl mt-6 hover:underline">
-                Broccoli Slaw slow cooking Recipe
+                Chicken Creole Cooking Recipe
               </h4>
               <div className="flex items-center text-lg text-gray-600 justify-between">
-                <p>June 7, 2021 </p>
+                <p>Jan 10, 2023 </p>
                 <p className="flex gap-1 items-center ">
                   <FaClock className="text-primary" /> 16 min Cook
                 </p>
