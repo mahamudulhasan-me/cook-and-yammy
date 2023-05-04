@@ -2,20 +2,29 @@ import React from "react";
 import { FaClock, FaDownload, FaHeart } from "react-icons/fa";
 import LazyLoad from "react-lazy-load";
 import { useLoaderData } from "react-router-dom";
+import Pdf from "react-to-pdf";
 import SectionHead from "../../Shared/SectionHead/SectionHead";
 
 const Blog = () => {
   const blogs = useLoaderData();
-
+  const ref = React.createRef();
   return (
     <div className="px-[10%] py-20">
-      <div className="w-52 bg-gray-100 py-2 mx-auto flex justify-center font-semibold rounded-md">
-        <button className="flex gap-2 items-center justify-center">
-          Download Blog as pdf <FaDownload className="text-primary" />
-        </button>
-      </div>
+      <Pdf targetRef={ref} filename="Latest yummy blog.pdf">
+        {({ toPdf }) => (
+          <div
+            onClick={toPdf}
+            className="w-52 bg-gray-100 py-2 mx-auto flex justify-center font-semibold rounded-md"
+          >
+            <button className="flex gap-2 items-center justify-center">
+              Download Blog as pdf <FaDownload className="text-primary" />
+            </button>
+          </div>
+        )}
+      </Pdf>
+
       <SectionHead>Latest Blog</SectionHead>
-      <div className="grid grid-cols-12 gap-12 items-start">
+      <div ref={ref} className="grid grid-cols-12 gap-12 items-start">
         <div className="col-span-8 grid grid-cols-2 gap-5">
           {blogs.map((blog) => (
             <div key={blog.id} className="border p-2 rounded-lg">
