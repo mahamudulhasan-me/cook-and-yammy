@@ -43,12 +43,12 @@ const RecipeWithChef = () => {
       >
         <div className=" md:pl-[10%] pl-4 pt-10 grid md:grid-cols-12 text-white">
           <div className="col-span-7 md:mr-16">
-            <div className="w-4/5 md:min-h-screen min-h-[calc(100vh-14.2rem)] bg-primary relative">
+            <div className="w-4/5 md:min-h-screen min-h-[calc(100vh-9.2rem)] bg-primary relative">
               <div className="absolute p-5  -right-6 left-6  top-6 bg-slate-900 border border-primary">
                 <img
                   src={chef_picture}
                   alt=""
-                  className="w-full h-80 object-cover"
+                  className="w-full md:h-80 h-52 object-cover"
                 />
                 <div>
                   <h3 className=" text-2xl mb-5 mt-2">{chef_name}</h3>
