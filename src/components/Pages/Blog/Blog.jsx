@@ -24,10 +24,10 @@ const Blog = () => {
       </Pdf>
 
       <SectionHead>Latest Blog</SectionHead>
-      <div ref={ref} className="grid grid-cols-12 gap-12 items-start">
-        <div className="col-span-8 grid grid-cols-2 gap-5">
+      <div ref={ref} className="md:grid md:grid-cols-12 gap-12 items-start">
+        <div className="col-span-8 md:grid grid-cols-2  gap-5">
           {blogs.map((blog) => (
-            <div key={blog.id} className="border p-2 rounded-lg">
+            <div key={blog.id} className="border p-2 mb-5 md:mb-0 rounded-lg">
               <LazyLoad>
                 <img src={blog.blog_image} alt="" className="rounded-lg" />
               </LazyLoad>
