@@ -16,25 +16,22 @@ const AllChef = () => {
       .then((data) => setChefInfo(data));
   }, []);
   return (
-    <div className="container2">
-      <SectionHead>Meet Our Legend Chefs</SectionHead>
-      <div className="grid lg:grid-cols-3 gap-3">
+    <div className="px-[5%] pt-20 pb-16">
+      <SectionHead>Meet Our Legendary Chefs</SectionHead>
+
+      <div className="grid grid-cols-2 gap-10 ">
         {chefInfo.map((chef) => (
           <div
             key={chef.id}
-            className=" p-3 text-center mb-12 shadow-md hover:shadow-xl"
+            className=" flex justify-between gap-5 p-3 mb-6  shadow-md hover:shadow-xl "
           >
-            <LazyLoad threshold={0.95}>
-              <img
-                src={chef.chef_picture}
-                className=" rounded-md object-cover md:w-4/5 mx-auto"
-                alt=""
-              />
+            <LazyLoad threshold={0.95} className="w-1/2">
+              <img src={chef.chef_picture} className=" rounded-md" alt="" />
             </LazyLoad>
-            <div>
-              <h3 className=" text-2xl mb-5 mt-2">{chef.chef_name}</h3>
+            <div className="flex flex-col justify-between w-1/2">
+              <h3 className=" text-2xl mb-1">{chef.chef_name}</h3>
 
-              <p className="flex justify-center font-semibold mb-3">
+              <p className="flex font-semibold mb-4">
                 <Rating
                   style={{ maxWidth: 100 }}
                   value={chef.rating}
@@ -43,11 +40,16 @@ const AllChef = () => {
                 5/{chef.rating}
               </p>
 
-              <p className="w-4/5 mx-auto mb-3">
+              <p className=" mb-3">
                 {chef?.bio?.length > 200 ? chef.bio.slice(0, 100) : chef.bio}
-                <span className="text-primary font-semibold">...See More</span>
+                <Link
+                  to={`/chef/${chef.chef_name}`}
+                  className="text-primary font-semibold"
+                >
+                  ...See More
+                </Link>
               </p>
-              <div className="flex items-center  gap-1 font-semibold ">
+              <div className="space-y-2 w-36 font-semibold ">
                 <p className="flex items-center bg-[#f8f8f8] px-2 py-1 gap-1 rounded-2xl">
                   <img src={experience} alt="" className="w-6 h-6" />
                   {chef.years_of_experience}Y. Exp.
@@ -60,15 +62,15 @@ const AllChef = () => {
                   <img src={like} alt="" /> {chef.like_number} Likes
                 </p>
               </div>
-            </div>
-            <div>
-              <Link
-                to={`/chef/${chef.chef_name}`}
-                className="bg-primary w-32 mx-auto h-10 mt-7 flex justify-center items-center  text-white font-semibold rounded-sm"
-              >
-                View Recipe
-                <FaArrowRight />
-              </Link>
+              <div>
+                <Link
+                  to={`/chef/${chef.chef_name}`}
+                  className="bg-primary gap-1 h-10 mt-7 flex justify-center items-center  text-white font-semibold rounded-sm"
+                >
+                  View Recipe
+                  <FaArrowRight />
+                </Link>
+              </div>
             </div>
           </div>
         ))}
@@ -78,3 +80,58 @@ const AllChef = () => {
 };
 
 export default AllChef;
+{
+  /* <div
+key={chef.id}
+className="flex p-3 text-center mb-12 shadow-md hover:shadow-xl "
+>
+<LazyLoad threshold={0.95}>
+  <img
+    src={chef.chef_picture}
+    className=" rounded-md object-cover md:w-4/5 mx-auto"
+    alt=""
+  />
+</LazyLoad>
+<div>
+  <h3 className=" text-2xl mb-5 mt-2">{chef.chef_name}</h3>
+
+  <p className="flex justify-center font-semibold mb-3">
+    <Rating
+      style={{ maxWidth: 100 }}
+      value={chef.rating}
+      readOnly
+    />
+    5/{chef.rating}
+  </p>
+
+  <p className="w-4/5 mx-auto mb-3">
+    {chef?.bio?.length > 200 ? chef.bio.slice(0, 100) : chef.bio}
+    <span className="text-primary font-semibold">
+      ...See More
+    </span>
+  </p>
+  <div className="flex items-center  gap-1 font-semibold ">
+    <p className="flex items-center bg-[#f8f8f8] px-2 py-1 gap-1 rounded-2xl">
+      <img src={experience} alt="" className="w-6 h-6" />
+      {chef.years_of_experience}Y. Exp.
+    </p>
+    <p className="flex items-center bg-[#f8f8f8] px-2 py-1 gap-1 rounded-2xl">
+      <img src={recipe} alt="" />
+      {chef.num_of_recipes}+ Recipe
+    </p>
+    <p className="flex items-center bg-[#f8f8f8] px-2 py-1 gap-1 rounded-2xl">
+      <img src={like} alt="" /> {chef.like_number} Likes
+    </p>
+  </div>
+</div>
+<div>
+  <Link
+    to={`/chef/${chef.chef_name}`}
+    className="bg-primary w-32 mx-auto h-10 mt-7 flex justify-center items-center  text-white font-semibold rounded-sm"
+  >
+    View Recipe
+    <FaArrowRight />
+  </Link>
+</div>
+</div> */
+}
