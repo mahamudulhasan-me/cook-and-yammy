@@ -48,7 +48,7 @@ const RecipeWithChef = () => {
                 <img
                   src={chef_picture}
                   alt=""
-                  className="w-full md:h-80 h-52 object-cover"
+                  className="w-full md:h-80 h-52 object-cover object-center "
                 />
                 <div>
                   <h3 className=" text-2xl mb-5 mt-2">{chef_name}</h3>
