@@ -12,7 +12,7 @@ const NotFound404 = () => {
       <h1 className="text-3xl font-medium text-primary">
         Oh No! Error {status}
       </h1>
-      {error && <p>{error.message}</p>}
+      {<p>{error?.message}</p>}
       <Link
         to={"./"}
         className="bg-primary w-36 h-10 mt-7 gap-2 flex justify-center items-center  text-white font-semibold rounded-sm"

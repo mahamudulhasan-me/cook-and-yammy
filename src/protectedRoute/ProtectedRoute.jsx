@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
+import preloader from "../assets/images/preloader.gif";
 import { AuthContext } from "../provider/AuthProvider";
 
 const ProtectedRoute = ({ children }) => {
@@ -18,7 +19,9 @@ const ProtectedRoute = ({ children }) => {
   if (isLoading) {
     return (
       <p>
-        L<span className="animate-spin">o</span>ading..
+        <div className="flex h-screen justify-center items-center ease-in-out transition-all">
+          <img src={preloader} alt="" className="md:w-2/6 " />
+        </div>
       </p>
     );
   }

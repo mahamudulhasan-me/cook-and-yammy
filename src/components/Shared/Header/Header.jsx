@@ -72,13 +72,13 @@ const Header = () => {
             <div className="flex gap-3 items-center">
               <div
                 className="tooltip hover:tooltip-open tooltip-bottom"
-                data-tip={user?.displayName}
+                data-tip={user?.displayName && user?.displayName}
               >
                 <LazyLoad>
                   <img
                     src={user.photoURL}
                     alt=""
-                    className="w-12 h-12 rounded-full ring ring-primary "
+                    className="w-12 h-12 rounded-full ring ring-primary"
                   />
                 </LazyLoad>
               </div>
