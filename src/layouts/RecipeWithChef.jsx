@@ -10,9 +10,7 @@ import RecipeDetails from "../components/Shared/RecipeDetails/RecipeDetails";
 import TrendingRecipe from "../components/Shared/RecipeDetails/TrendingRecipe";
 import SectionHead from "../components/Shared/SectionHead/SectionHead";
 const RecipeWithChef = () => {
-  const [isLoading, setIsLoading] = useState(false);
   const [chefDetails, setChefDetails] = useState({});
-  const [seeMore, setSeeMore] = useState(true);
   const {
     id,
     chef_name,
@@ -25,7 +23,6 @@ const RecipeWithChef = () => {
   } = chefDetails;
   const { name } = useParams();
   const recifeDetails = useLoaderData();
-  console.log(recifeDetails);
   useEffect(() => {
     fetch(`https://cook-and-yammy-server-mahamudulhasan-me.vercel.app/chefInfo`)
       .then((response) => response.json())
@@ -34,7 +31,6 @@ const RecipeWithChef = () => {
       );
   }, []);
 
-  console.log(recifeDetails);
   return (
     <div>
       <div
