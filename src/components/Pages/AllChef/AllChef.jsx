@@ -11,7 +11,7 @@ const AllChef = () => {
   const [chefInfo, setChefInfo] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:6969/chefInfo`)
+    fetch(`https://cook-and-yammy-server-mahamudulhasan-me.vercel.app/chefInfo`)
       .then((response) => response.json())
       .then((data) => setChefInfo(data));
   }, []);

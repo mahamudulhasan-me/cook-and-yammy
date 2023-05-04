@@ -27,7 +27,7 @@ const RecipeWithChef = () => {
   const recifeDetails = useLoaderData();
   console.log(recifeDetails);
   useEffect(() => {
-    fetch(`http://localhost:6969/chefInfo`)
+    fetch(`https://cook-and-yammy-server-mahamudulhasan-me.vercel.app/chefInfo`)
       .then((response) => response.json())
       .then((data) =>
         setChefDetails(data.find((chef) => chef.chef_name === name))
