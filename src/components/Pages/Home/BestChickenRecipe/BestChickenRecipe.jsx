@@ -36,7 +36,7 @@ const BestChickenRecipe = () => {
           </div>
         </div>
         <div className="col-span-6 grid md:grid-cols-2 gap-8">
-          <div>
+          <div className="border-2 p-2 rounded-md">
             <img src={ckImage2} alt="" className="rounded-lg mb-5" />
             <div>
               <CategoryTag bgColor="bg-violet-500">Better</CategoryTag>
@@ -44,14 +44,14 @@ const BestChickenRecipe = () => {
                 Popcorn Chicken Cooking Recipe
               </h4>
               <div className="flex items-center text-lg text-gray-600 justify-between">
-                <p>March, 2023 </p>
+                <p>March 16, 2023 </p>
                 <p className="flex gap-1 items-center ">
                   <FaClock className="text-primary" /> 16 min Cook
                 </p>
               </div>
             </div>
           </div>
-          <div>
+          <div className="border-2 p-2 rounded-md">
             <img src={ckImage3} alt="" className="rounded-lg mb-5" />
             <div>
               <CategoryTag bgColor="bg-orange-500">Chicken</CategoryTag>
@@ -66,7 +66,7 @@ const BestChickenRecipe = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="border-2 p-2 rounded-md">
             <img src="https://rb.gy/9m5sl" alt="" className="rounded-lg mb-5" />
             <div>
               <CategoryTag bgColor="bg-red-500">Basic</CategoryTag>
@@ -81,7 +81,7 @@ const BestChickenRecipe = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="border-2 p-2 rounded-md">
             <img src={ckImage4} alt="" className="rounded-lg mb-5" />
             <div>
               <CategoryTag bgColor="bg-green-500">Easy</CategoryTag>
