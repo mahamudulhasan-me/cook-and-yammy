@@ -1,13 +1,12 @@
+import "aos/dist/aos.css";
 import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import preloader from "../assets/images//preloader.gif";
 import Footer from "../components/Shared/Footer/Footer";
 import Header from "../components/Shared/Header/Header";
 import { AuthContext } from "../provider/AuthProvider";
-
 const Main = () => {
   const { loading } = useContext(AuthContext);
-  // const loading = true;
   return (
     <div>
       {loading ? (

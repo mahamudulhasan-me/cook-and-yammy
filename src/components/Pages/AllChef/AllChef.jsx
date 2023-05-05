@@ -1,4 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import LazyLoad from "react-lazy-load";
@@ -9,7 +11,10 @@ import like from "../../../assets/images/icon/heart.png";
 import SectionHead from "../../Shared/SectionHead/SectionHead";
 const AllChef = () => {
   const [chefInfo, setChefInfo] = useState([]);
-
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   useEffect(() => {
     fetch(`https://cook-and-yammy-server-mahamudulhasan-me.vercel.app/chefInfo`)
       .then((response) => response.json())
@@ -22,6 +27,7 @@ const AllChef = () => {
       <div className="md:grid grid-cols-2 gap-10 ">
         {chefInfo.map((chef) => (
           <div
+            data-aos="fade-up"
             key={chef.id}
             className=" md:flex justify-between gap-5 p-3 mb-6  shadow-md hover:shadow-xl "
           >
