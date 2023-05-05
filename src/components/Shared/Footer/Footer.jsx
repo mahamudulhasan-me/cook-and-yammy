@@ -15,7 +15,7 @@ import CategoryTag from "../CategoryTag";
 import SectionHeadMini from "../SectionHead/SectionHeadMini";
 const Footer = () => {
   return (
-    <div className="px-[5%]   bg-[#F7F6F3] pt-10">
+    <div data-aos="fade-up" className="px-[5%]   bg-[#F7F6F3] pt-10">
       <div className=" grid  items-center lg:grid-cols-4 md:grid-cols-2 gap-8 pb-10 border-b">
         <div
           style={{ backgroundImage: `url(${footerAbout})` }}
