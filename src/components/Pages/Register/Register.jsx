@@ -115,9 +115,9 @@ const Register = ({ setSignInPage, signInPage }) => {
             className="h-4 w-4"
             onClick={() => setAcceptTerms(!acceptTerms)}
           />
-          <label htmlFor="">
+          <label htmlFor="" className="text-black">
             Accept{" "}
-            <Link className="text-blue-600 hover:underline">
+            <Link className="text-blue-600 hover:underline font-semibold">
               Terms & Condition
             </Link>
           </label>
@@ -130,10 +130,10 @@ const Register = ({ setSignInPage, signInPage }) => {
         >
           Sign up with email
         </button>
-        <p className="text-center">
+        <p className="text-center text-black">
           Have an account?{" "}
           <Link
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 hover:underline font-semibold"
             onClick={() => setSignInPage(!signInPage)}
           >
             Sign In
