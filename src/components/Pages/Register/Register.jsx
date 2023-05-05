@@ -50,7 +50,6 @@ const Register = ({ setSignInPage, signInPage }) => {
           })
             .then(toast.success("Registration Successful"))
             .catch((err) => toast(err.message));
-          logOut;
           navigate("/");
         })
         .catch((error) => setPassError(error.message));
