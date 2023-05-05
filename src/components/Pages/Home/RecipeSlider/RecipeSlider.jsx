@@ -18,7 +18,7 @@ import recipe6 from "../../../../assets/images/recipe/zyx6a0reb18.jpg";
 import CategoryTag from "../../../Shared/CategoryTag";
 export default function RecipeSlider() {
   return (
-    <div data-aos="fade-left" className=" recipeSlider mt-20">
+    <div data-aos="zoom-left" className=" recipeSlider mt-20">
       <Swiper
         slidesPerView={1}
         spaceBetween={10}

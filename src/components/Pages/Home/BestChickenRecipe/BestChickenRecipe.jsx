@@ -16,9 +16,7 @@ const BestChickenRecipe = () => {
 
       <div className="grid md:grid-cols-12 gap-10 justify-center">
         <div
-          data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
+          data-aos="zoom-right"
           className="col-span-6 hidden md:block relative  "
         >
           <div className="absolute top-0 right-0 w-12 h-12 m-2 bg-green-700 font-semibold  rounded-full flex items-center justify-center text-white">
@@ -44,9 +42,7 @@ const BestChickenRecipe = () => {
           </div>
         </div>
         <div
-          data-aos="fade-left"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
+          data-aos="zoom-left"
           className="col-span-6 grid md:grid-cols-2 gap-8"
         >
           <div className="border-2 p-2 rounded-md">
