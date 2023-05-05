@@ -18,6 +18,14 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "blogs",
+        element: <Blog />,
+        loader: () =>
+          fetch(
+            `https://cook-and-yammy-server-mahamudulhasan-me.vercel.app/blogs`
+          ),
+      },
+      {
         path: "chef/:name",
         element: (
           <ProtectedRoute>
@@ -32,14 +40,6 @@ const router = createBrowserRouter([
       {
         path: "signInSignUp",
         element: <Login />,
-      },
-      {
-        path: "blogs",
-        element: <Blog />,
-        loader: () =>
-          fetch(
-            `https://cook-and-yammy-server-mahamudulhasan-me.vercel.app/blogs`
-          ),
       },
     ],
   },
