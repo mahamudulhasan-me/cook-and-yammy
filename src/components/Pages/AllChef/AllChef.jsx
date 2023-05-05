@@ -22,17 +22,24 @@ const AllChef = () => {
   }, []);
   return (
     <div className="px-[5%] pt-20 pb-16">
-      <SectionHead>Meet Our Legendary Chefs</SectionHead>
+      <div data-aos="fade-right">
+        <SectionHead>Meet Our Legendary Chefs</SectionHead>
+      </div>
 
       <div className="md:grid grid-cols-2 gap-10 ">
         {chefInfo.map((chef) => (
           <div
-            data-aos="fade-up"
+            data-aos="zoom-in"
             key={chef.id}
             className=" md:flex justify-between gap-5 p-3 mb-6  shadow-md hover:shadow-xl "
           >
             <LazyLoad threshold={0.95} className="md:w-1/2 mb-2 md:mb-0">
-              <img src={chef.chef_picture} className=" rounded-md" alt="" />
+              <img
+                data-aos="zoom-out"
+                src={chef.chef_picture}
+                className=" rounded-md"
+                alt=""
+              />
             </LazyLoad>
             <div className="flex flex-col justify-between  md:w-1/2">
               <h3 className=" text-2xl mb-1">{chef.chef_name}</h3>

@@ -6,9 +6,12 @@ import logo from "../../../assets/images/yammyLogo.png";
 const NotFound404 = () => {
   const { error, status } = useRouteError();
   return (
-    <div className="md:px-[35%] px-[20%]  bg-[#F5F4F0] h-screen flex flex-col justify-center space-y-4 items-center">
+    <div
+      data-aos="flip-up"
+      className="md:px-[35%] px-[20%]  bg-[#F5F4F0] h-screen flex flex-col justify-center space-y-4 items-center"
+    >
       <img src={logo} alt="" className="w-40" />
-      <img src={page404} alt="" />
+      <img data-aos="zoom-in" src={page404} alt="" />
       <h1 className="text-3xl font-medium text-primary">
         Oh No! Error {status}
       </h1>

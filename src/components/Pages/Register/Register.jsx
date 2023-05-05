@@ -8,7 +8,7 @@ import SectionHead from "../../Shared/SectionHead/SectionHead";
 
 const Register = ({ setSignInPage, signInPage }) => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createNewUser, updateUserInfo } = useContext(AuthContext);
+  const { createNewUser } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passError, setPassError] = useState("");
@@ -50,7 +50,7 @@ const Register = ({ setSignInPage, signInPage }) => {
           })
             .then(toast.success("Registration Successful"))
             .catch((err) => toast(err.message));
-
+          logOut;
           navigate("/");
         })
         .catch((error) => setPassError(error.message));
@@ -60,7 +60,14 @@ const Register = ({ setSignInPage, signInPage }) => {
   return (
     <>
       <SectionHead>Sign Up For Free</SectionHead>
-      <form onSubmit={registerUser} className="space-y-4 md:w-4/5">
+      <form
+        data-aos="fade-left"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="500"
+        data-aos-duration="500"
+        onSubmit={registerUser}
+        className="space-y-4 md:w-4/5"
+      >
         <input
           type="text"
           name="name"

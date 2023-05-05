@@ -24,6 +24,7 @@ const RecipeDetails = ({ recipe }) => {
     <div className="border p-5 rounded-lg mb-10">
       <LazyLoad>
         <img
+          data-aos="zoom-in"
           className="md:h-[22rem] w-full rounded-xl"
           src={food_image}
           alt=""
@@ -45,7 +46,7 @@ const RecipeDetails = ({ recipe }) => {
             Add to Favorite
           </p>
         </div>
-        <div>
+        <div data-aos="zoom-in">
           <SectionHeadMini>Ingredients</SectionHeadMini>
           {ingredients.length > 3 && seeMore2
             ? ingredients.slice(0, 3).map((ingredient, index) => (
@@ -67,7 +68,7 @@ const RecipeDetails = ({ recipe }) => {
             </p>
           )}
         </div>
-        <div className="mt-5">
+        <div data-aos="zoom-in" className="mt-5">
           <SectionHeadMini>Cooking Method</SectionHeadMini>
           <div className="space-y-2">
             {directions.length > 3 && seeMore

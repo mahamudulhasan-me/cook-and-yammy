@@ -10,9 +10,17 @@ import SectionHead from "../../../Shared/SectionHead/SectionHead";
 const BestChickenRecipe = () => {
   return (
     <div className="px-[5%] min-h-screen">
-      <SectionHead>Best Chicken Recipe</SectionHead>
+      <div data-aos="fade-right">
+        <SectionHead>Best Chicken Recipe</SectionHead>
+      </div>
+
       <div className="grid md:grid-cols-12 gap-10 justify-center">
-        <div className="col-span-6 hidden md:block relative  ">
+        <div
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          className="col-span-6 hidden md:block relative  "
+        >
           <div className="absolute top-0 right-0 w-12 h-12 m-2 bg-green-700 font-semibold  rounded-full flex items-center justify-center text-white">
             7.8
           </div>
@@ -35,7 +43,12 @@ const BestChickenRecipe = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-6 grid md:grid-cols-2 gap-8">
+        <div
+          data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          className="col-span-6 grid md:grid-cols-2 gap-8"
+        >
           <div className="border-2 p-2 rounded-md">
             <img src={ckImage2} alt="" className="rounded-lg mb-5" />
             <div>

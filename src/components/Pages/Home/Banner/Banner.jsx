@@ -24,7 +24,7 @@ export default function Banner() {
           dynamicBullets: true,
         }}
         autoplay={{
-          delay: 5000,
+          delay: 6000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination]}
@@ -69,13 +69,13 @@ export default function Banner() {
                         Pasta
                       </CategoryTag>
                     </p>
-                    <p className="bg-primary bg-opacity-20 py-1  rounded-xl px-2 w-36">
+                    <p className="bg-primary bg-opacity-20 py-2  rounded-xl px-2 w-36">
                       Date- May 2, 2023
                     </p>
                   </div>
                   <Link
                     to={"./chefList"}
-                    className="bg-primary w-36 h-10 mt-7 gap-2 flex justify-center items-center  text-white font-semibold rounded-sm"
+                    className="bg-primary w-36 py-2 h-10 mt-7 gap-2 flex justify-center items-center  text-white font-semibold rounded-sm"
                   >
                     View Recipe
                     <FaArrowRight />
@@ -94,8 +94,8 @@ export default function Banner() {
               <div>
                 <MovingText
                   type="slideInFromLeft"
-                  duration="1000ms"
-                  delay="0s"
+                  duration="5000ms"
+                  delay="7000s"
                   direction="normal"
                   timing="ease"
                   iteration="1"
@@ -125,12 +125,12 @@ export default function Banner() {
                       </CategoryTag>
                     </p>
                     <p className="bg-primary bg-opacity-20 py-1  rounded-xl px-2 w-36">
-                      Date- May 2, 2023
+                      Date- JAN 3, 2023
                     </p>
                   </div>
                   <Link
                     to={"./chefList"}
-                    className="bg-primary w-36 h-10 mt-7 gap-2 flex justify-center items-center  text-white font-semibold rounded-sm"
+                    className="bg-primary py-2 w-36 h-10 mt-7 gap-2 flex justify-center items-center  text-white font-semibold rounded-sm"
                   >
                     View Recipe
                     <FaArrowRight />
@@ -180,12 +180,12 @@ export default function Banner() {
                       </CategoryTag>
                     </p>
                     <p className="bg-primary bg-opacity-20 py-1  rounded-xl px-2 w-36">
-                      Date- May 2, 2023
+                      Date- APR 9, 2023
                     </p>
                   </div>
                   <Link
                     to={"./chefList"}
-                    className="bg-primary w-36 h-10 mt-7 gap-2 flex justify-center items-center  text-white font-semibold rounded-sm"
+                    className="bg-primary py-2 w-36 h-10 mt-7 gap-2 flex justify-center items-center  text-white font-semibold rounded-sm"
                   >
                     View Recipe
                     <FaArrowRight />
@@ -240,7 +240,7 @@ export default function Banner() {
                   </div>
                   <Link
                     to={"./chefList"}
-                    className="bg-primary w-36 h-10 mt-7 gap-2 flex justify-center items-center  text-white font-semibold rounded-sm"
+                    className="bg-primary py-2 w-36 h-10 mt-7 gap-2 flex justify-center items-center  text-white font-semibold rounded-sm"
                   >
                     View Recipe
                     <FaArrowRight />

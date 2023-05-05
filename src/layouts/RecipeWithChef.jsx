@@ -21,8 +21,11 @@ const RecipeWithChef = () => {
     bio,
     chef_picture,
   } = chefDetails;
+
   const { name } = useParams();
+
   const recifeDetails = useLoaderData();
+
   useEffect(() => {
     fetch(`https://cook-and-yammy-server-mahamudulhasan-me.vercel.app/chefInfo`)
       .then((response) => response.json())
@@ -38,7 +41,7 @@ const RecipeWithChef = () => {
         className=" bg-cover object-cover bg-slate-600 bg-blend-overlay"
       >
         <div className=" md:pl-[10%] pl-4 pt-10 grid md:grid-cols-12 text-white">
-          <div className="col-span-7 md:mr-16">
+          <div data-aos="fade-right" className="col-span-7 md:mr-16">
             <div className="w-4/5 md:min-h-screen min-h-[calc(100vh-9.2rem)] bg-primary relative">
               <div className="absolute p-5  -right-6 left-6  top-6 bg-slate-900 border border-primary">
                 <img
@@ -73,7 +76,7 @@ const RecipeWithChef = () => {
             </div>
           </div>
           <div className="col-span-5  md:text-6xl mt-16 mb-5 md:mb-0 text-xl md:mt-36 font-semibold ">
-            <p>
+            <p data-aos="zoom-in">
               Welcome to{" "}
               <span className="text-primary">{chef_name}&apos;s</span> Recipes
             </p>
@@ -81,9 +84,11 @@ const RecipeWithChef = () => {
         </div>
       </div>
       <div className="md:container  px-[5%] my-20 md:my-28 relative">
-        <SectionHead>
-          <span className="text-primary">{chef_name}&apos;s</span> Recipes
-        </SectionHead>
+        <div data-aos="fade-right">
+          <SectionHead>
+            <span className="text-primary">{chef_name}&apos;s</span> Recipes
+          </SectionHead>
+        </div>
         <div className="md:grid md:grid-cols-12 gap-10">
           <div className="col-span-8">
             {recifeDetails.map((recipe) => (

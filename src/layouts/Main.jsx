@@ -1,18 +1,16 @@
 import "aos/dist/aos.css";
 import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
-import preloader from "../assets/images//preloader.gif";
 import Footer from "../components/Shared/Footer/Footer";
 import Header from "../components/Shared/Header/Header";
+import Loader from "../components/Shared/Loader/Loader";
 import { AuthContext } from "../provider/AuthProvider";
 const Main = () => {
   const { loading } = useContext(AuthContext);
   return (
     <div>
       {loading ? (
-        <div className="flex h-screen justify-center items-center ease-in-out transition-all">
-          <img src={preloader} alt="" className="md:w-2/6 " />
-        </div>
+        <Loader />
       ) : (
         <>
           <Header />
